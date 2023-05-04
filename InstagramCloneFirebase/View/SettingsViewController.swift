@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import Firebase
 
 class SettingsViewController: UIViewController {
 
@@ -18,7 +19,21 @@ class SettingsViewController: UIViewController {
 
 
     @IBAction func logoutButton(_ sender: Any) {
-        performSegue(withIdentifier: "toSignVC", sender: nil)
+       userLogout()
+    }
+    
+}
+
+// MARK: Firebase uzerinden cikis yapma
+extension SettingsViewController{
+    
+    func userLogout()  {
+        do {
+            try Auth.auth().signOut()
+            self.performSegue(withIdentifier: "settingsToLogInVC", sender: nil)
+        } catch  {
+            print(error.localizedDescription)
+        }
     }
     
 }

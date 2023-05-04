@@ -51,7 +51,14 @@ extension SignUpViewController{
  
                 }else{
                     
-                    self.performSegue(withIdentifier: "signUpToLogInVC", sender: nil)
+                    let alert = UIAlertController(title: "Successed", message: "Kayit Basarili", preferredStyle: .alert)
+                    
+                    let okeyButton = UIAlertAction(title: "Giris Yap", style: .default) { action in
+                        self.performSegue(withIdentifier: "signUpToLogInVC", sender: nil)
+                    }
+                    alert.addAction(okeyButton)
+                    self.present(alert, animated: true)
+                    
                 }
             }
             

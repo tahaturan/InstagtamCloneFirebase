@@ -73,7 +73,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="BwJ-d4-9c5" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1248.0916030534352" y="301.40845070422534"/>
+            <point key="canvasLocation" x="-1349" y="379"/>
         </scene>
         <!--Login-->
         <scene sceneID="tne-QT-ifu">
@@ -174,7 +174,7 @@
                     </view>
                     <tabBarItem key="tabBarItem" title="Settings" image="gearshape" catalog="system" id="TNC-IW-HoX"/>
                     <connections>
-                        <segue destination="BYZ-38-t0r" kind="presentation" identifier="toSignVC" modalPresentationStyle="fullScreen" id="JJS-4H-dO7"/>
+                        <segue destination="BYZ-38-t0r" kind="presentation" identifier="settingsToLogInVC" modalPresentationStyle="fullScreen" id="JJS-4H-dO7"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ldG-et-m11" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -216,7 +216,7 @@
         <!--Tab Bar Controller-->
         <scene sceneID="0Z7-ye-sP9">
             <objects>
-                <tabBarController id="WfE-lF-yQr" sceneMemberID="viewController">
+                <tabBarController storyboardIdentifier="tabBar" id="WfE-lF-yQr" sceneMemberID="viewController">
                     <navigationItem key="navigationItem" id="UhW-rg-taG"/>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="tmy-CZ-jlq">
@@ -236,7 +236,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="lyq-TA-k3d"/>
+        <segue reference="JJS-4H-dO7"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="gearshape" catalog="system" width="128" height="123"/>
