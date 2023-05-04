@@ -9,6 +9,8 @@ import UIKit
 import Firebase
 
 class SettingsViewController: UIViewController {
+    
+    
 
     override func viewDidLoad() {
         super.viewDidLoad()
