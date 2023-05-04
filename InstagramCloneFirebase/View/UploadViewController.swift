@@ -68,19 +68,19 @@ extension UploadViewController{
         //Resimi Veriye cevirmemiz gerekiyor o sekilde kayit yapicaz
         if let data = selectImageView.image?.jpegData(compressionQuality: 0.5) {
             
-            let imageReference = mediaFolder.child("image.jpg")// gorselin referansi
+            let uuid = UUID().uuidString
+            
+            let imageReference = mediaFolder.child("\(uuid).jpg")// gorselin referansi
             imageReference.putData(data) { metadata, error in
                 
                 if error != nil {
-                    print(error?.localizedDescription ?? "")
+                    self.makeAlert(alertTitle: "Error", alertMessage: error?.localizedDescription ?? "Error")
                 }else{
                     
                     imageReference.downloadURL { url, error in
                         if error == nil {
                             let imageUrl = url?.absoluteString
-                            if let urlImage = imageUrl {
-                                print(urlImage)
-                            }
+                   
                         }
                     }
                     
@@ -89,6 +89,17 @@ extension UploadViewController{
             }
             
         }
+    }
+    
+}
+// MARK: Alert
+extension UploadViewController{
+    
+    func makeAlert(alertTitle:String , alertMessage:String)  {
+        let alert = UIAlertController(title: alertTitle, message: alertMessage, preferredStyle: .alert)
+        let okeyButton = UIAlertAction(title: "Ok", style: .default)
+        alert.addAction(okeyButton)
+        self.present(alert, animated: true)
     }
     
 }
