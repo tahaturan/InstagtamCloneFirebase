@@ -80,6 +80,22 @@ extension UploadViewController{
                     imageReference.downloadURL { url, error in
                         if error == nil {
                             let imageUrl = url?.absoluteString
+                            
+                            //DATABASE
+                            let fireStoreDatabase = Firestore.firestore()
+                            
+                            var fireStoreReference : DocumentReference? = nil
+                            
+                            let fireStorePost = ["imageUrl":imageUrl! , "postedBy":Auth.auth().currentUser!.email , "postComment": self.commentTextField.text!, "date": "date" , "likes":0] as [String:Any]
+                            
+                            fireStoreReference = fireStoreDatabase.collection("Posts").addDocument(data: fireStorePost , completion: { error in
+                                
+                                if error != nil{
+                                    self.makeAlert(alertTitle: "Error!", alertMessage: error?.localizedDescription ?? "ERROR")
+                                }
+                            })
+                            
+                            
                    
                         }
                     }
@@ -92,6 +108,8 @@ extension UploadViewController{
     }
     
 }
+
+
 // MARK: Alert
 extension UploadViewController{
     
