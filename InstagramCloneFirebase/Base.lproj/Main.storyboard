@@ -8,10 +8,77 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Sign-->
+        <!--Sign Up View Controller-->
+        <scene sceneID="zKM-KY-bru">
+            <objects>
+                <viewController id="sdS-27-s96" customClass="SignUpViewController" customModule="InstagramCloneFirebase" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="ibb-Av-2LG">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="842"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sign Up" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hQh-AW-aVv">
+                                <rect key="frame" x="143.66666666666666" y="96" width="106" height="37"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="31"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="UserName" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="D2t-c2-F7u">
+                                <rect key="frame" x="20" y="244" width="353" height="34"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="E-Mail" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="0cz-xF-KN3">
+                                <rect key="frame" x="20" y="298" width="353" height="34"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="2U2-mb-4jB">
+                                <rect key="frame" x="20" y="352" width="353" height="34"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yUN-4U-dev">
+                                <rect key="frame" x="154.66666666666666" y="451" width="84" height="35"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Sign Up"/>
+                                <connections>
+                                    <action selector="signUpButton:" destination="sdS-27-s96" eventType="touchUpInside" id="fDe-ge-Xpg"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="QfV-WF-MMF"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="yUN-4U-dev" firstAttribute="top" secondItem="2U2-mb-4jB" secondAttribute="bottom" constant="65" id="7kx-rv-UNf"/>
+                            <constraint firstItem="QfV-WF-MMF" firstAttribute="trailing" secondItem="2U2-mb-4jB" secondAttribute="trailing" constant="20" id="Eep-AC-i04"/>
+                            <constraint firstItem="QfV-WF-MMF" firstAttribute="trailing" secondItem="0cz-xF-KN3" secondAttribute="trailing" constant="20" id="KgK-n8-5FW"/>
+                            <constraint firstItem="yUN-4U-dev" firstAttribute="centerX" secondItem="ibb-Av-2LG" secondAttribute="centerX" id="OBP-Ax-NQx"/>
+                            <constraint firstItem="hQh-AW-aVv" firstAttribute="centerX" secondItem="ibb-Av-2LG" secondAttribute="centerX" id="PzY-rf-D1t"/>
+                            <constraint firstItem="0cz-xF-KN3" firstAttribute="leading" secondItem="QfV-WF-MMF" secondAttribute="leading" constant="20" id="V9v-K4-GSU"/>
+                            <constraint firstItem="0cz-xF-KN3" firstAttribute="top" secondItem="D2t-c2-F7u" secondAttribute="bottom" constant="20" id="XWE-aj-KfK"/>
+                            <constraint firstItem="hQh-AW-aVv" firstAttribute="top" secondItem="QfV-WF-MMF" secondAttribute="top" constant="96" id="a2V-XP-frV"/>
+                            <constraint firstItem="2U2-mb-4jB" firstAttribute="leading" secondItem="QfV-WF-MMF" secondAttribute="leading" constant="20" id="d0c-Wy-KlU"/>
+                            <constraint firstItem="2U2-mb-4jB" firstAttribute="top" secondItem="0cz-xF-KN3" secondAttribute="bottom" constant="20" id="mgi-Id-BQj"/>
+                            <constraint firstItem="QfV-WF-MMF" firstAttribute="trailing" secondItem="D2t-c2-F7u" secondAttribute="trailing" constant="20" id="obB-xB-KFM"/>
+                            <constraint firstItem="D2t-c2-F7u" firstAttribute="leading" secondItem="QfV-WF-MMF" secondAttribute="leading" constant="20" id="t0b-l2-g1T"/>
+                            <constraint firstItem="D2t-c2-F7u" firstAttribute="top" secondItem="hQh-AW-aVv" secondAttribute="bottom" constant="111" id="tX6-jy-CNf"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="emailTextField" destination="0cz-xF-KN3" id="fIe-zy-J7g"/>
+                        <outlet property="passwordTextField" destination="2U2-mb-4jB" id="P3Z-Z1-PFf"/>
+                        <outlet property="userNameTextField" destination="D2t-c2-F7u" id="kXV-JU-g9D"/>
+                        <segue destination="BYZ-38-t0r" kind="presentation" identifier="signUpToLogInVC" modalPresentationStyle="fullScreen" id="lyq-TA-k3d"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="BwJ-d4-9c5" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1248.0916030534352" y="301.40845070422534"/>
+        </scene>
+        <!--Login-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController title="Sign" id="BYZ-38-t0r" customClass="ViewController" customModule="InstagramCloneFirebase" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="Login" id="BYZ-38-t0r" customClass="ViewController" customModule="InstagramCloneFirebase" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -46,6 +113,7 @@
                                 <buttonConfiguration key="configuration" style="plain" title="Sign Up"/>
                                 <connections>
                                     <action selector="signUpButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="hL8-ZF-ani"/>
+                                    <segue destination="sdS-27-s96" kind="presentation" id="dw2-QQ-eWK"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -167,6 +235,9 @@
             <point key="canvasLocation" x="-403" y="-360"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="lyq-TA-k3d"/>
+    </inferredMetricsTieBreakers>
     <resources>
         <image name="gearshape" catalog="system" width="128" height="123"/>
         <image name="homekit" catalog="system" width="128" height="104"/>

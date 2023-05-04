@@ -24,6 +24,7 @@
 		5FCF5A8B2A039E5000F4E12E /* FeedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FCF5A8A2A039E5000F4E12E /* FeedViewController.swift */; };
 		5FCF5A8D2A039E6300F4E12E /* UploadViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FCF5A8C2A039E6300F4E12E /* UploadViewController.swift */; };
 		5FCF5A8F2A039E7C00F4E12E /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FCF5A8E2A039E7C00F4E12E /* SettingsViewController.swift */; };
+		5FCF5A912A03A83400F4E12E /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FCF5A902A03A83400F4E12E /* SignUpViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -61,6 +62,7 @@
 		5FCF5A8A2A039E5000F4E12E /* FeedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedViewController.swift; sourceTree = "<group>"; };
 		5FCF5A8C2A039E6300F4E12E /* UploadViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UploadViewController.swift; sourceTree = "<group>"; };
 		5FCF5A8E2A039E7C00F4E12E /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
+		5FCF5A902A03A83400F4E12E /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -151,6 +153,7 @@
 				5FCF5A8A2A039E5000F4E12E /* FeedViewController.swift */,
 				5FCF5A8C2A039E6300F4E12E /* UploadViewController.swift */,
 				5FCF5A8E2A039E7C00F4E12E /* SettingsViewController.swift */,
+				5FCF5A902A03A83400F4E12E /* SignUpViewController.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -297,6 +300,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				5FCF5A532A03802E00F4E12E /* ViewController.swift in Sources */,
+				5FCF5A912A03A83400F4E12E /* SignUpViewController.swift in Sources */,
 				5FCF5A8D2A039E6300F4E12E /* UploadViewController.swift in Sources */,
 				5FCF5A4F2A03802E00F4E12E /* AppDelegate.swift in Sources */,
 				5FCF5A8B2A039E5000F4E12E /* FeedViewController.swift in Sources */,
