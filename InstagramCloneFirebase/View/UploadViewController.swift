@@ -7,6 +7,7 @@
 
 import UIKit
 import Firebase
+import FirebaseStorage
 
 class UploadViewController: UIViewController {
     
@@ -28,6 +29,7 @@ class UploadViewController: UIViewController {
     
 
     @IBAction func uploadButton(_ sender: Any) {
+        uploadImage()
     }
     
 
@@ -52,3 +54,41 @@ extension UploadViewController:UIImagePickerControllerDelegate , UINavigationCon
     
 }
 
+
+
+// MARK: Firebase storage a resim yukleme
+extension UploadViewController{
+    
+    func uploadImage()  {
+        let storage = Storage.storage()
+        let storageReference = storage.reference()
+        
+        let mediaFolder = storageReference.child("media") //klasorun refenrasi
+        
+        //Resimi Veriye cevirmemiz gerekiyor o sekilde kayit yapicaz
+        if let data = selectImageView.image?.jpegData(compressionQuality: 0.5) {
+            
+            let imageReference = mediaFolder.child("image.jpg")// gorselin referansi
+            imageReference.putData(data) { metadata, error in
+                
+                if error != nil {
+                    print(error?.localizedDescription ?? "")
+                }else{
+                    
+                    imageReference.downloadURL { url, error in
+                        if error == nil {
+                            let imageUrl = url?.absoluteString
+                            if let urlImage = imageUrl {
+                                print(urlImage)
+                            }
+                        }
+                    }
+                    
+                }
+                
+            }
+            
+        }
+    }
+    
+}
