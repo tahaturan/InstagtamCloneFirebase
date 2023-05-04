@@ -86,13 +86,18 @@ extension UploadViewController{
                             
                             var fireStoreReference : DocumentReference? = nil
                             
-                            let fireStorePost = ["imageUrl":imageUrl! , "postedBy":Auth.auth().currentUser!.email , "postComment": self.commentTextField.text!, "date": "date" , "likes":0] as [String:Any]
+                            let fireStorePost = ["imageUrl":imageUrl! , "postedBy":Auth.auth().currentUser!.email , "postComment": self.commentTextField.text!, "date": FieldValue.serverTimestamp() , "likes":0] as [String:Any]
                             
                             fireStoreReference = fireStoreDatabase.collection("Posts").addDocument(data: fireStorePost , completion: { error in
                                 
                                 if error != nil{
                                     self.makeAlert(alertTitle: "Error!", alertMessage: error?.localizedDescription ?? "ERROR")
+                                }else{
+                                    self.selectImageView.image = UIImage(named: "select.png")
+                                    self.commentTextField.text = ""
+                                    self.tabBarController?.selectedIndex = 0
                                 }
+                                
                             })
                             
                             
