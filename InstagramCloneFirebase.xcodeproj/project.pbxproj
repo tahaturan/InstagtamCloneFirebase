@@ -26,6 +26,7 @@
 		5FCF5A8F2A039E7C00F4E12E /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FCF5A8E2A039E7C00F4E12E /* SettingsViewController.swift */; };
 		5FCF5A912A03A83400F4E12E /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FCF5A902A03A83400F4E12E /* SignUpViewController.swift */; };
 		5FCF5A932A04DCBE00F4E12E /* FeedTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FCF5A922A04DCBE00F4E12E /* FeedTableViewCell.swift */; };
+		5FCF5A962A04EF7F00F4E12E /* SDWebImage in Frameworks */ = {isa = PBXBuildFile; productRef = 5FCF5A952A04EF7F00F4E12E /* SDWebImage */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -76,6 +77,7 @@
 				5FCF5A882A038CBD00F4E12E /* FirebaseStorage in Frameworks */,
 				5FCF5A842A038CBD00F4E12E /* FirebaseAuth in Frameworks */,
 				5FCF5A862A038CBD00F4E12E /* FirebaseFirestore in Frameworks */,
+				5FCF5A962A04EF7F00F4E12E /* SDWebImage in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -182,6 +184,7 @@
 				5FCF5A832A038CBD00F4E12E /* FirebaseAuth */,
 				5FCF5A852A038CBD00F4E12E /* FirebaseFirestore */,
 				5FCF5A872A038CBD00F4E12E /* FirebaseStorage */,
+				5FCF5A952A04EF7F00F4E12E /* SDWebImage */,
 			);
 			productName = InstagramCloneFirebase;
 			productReference = 5FCF5A4B2A03802E00F4E12E /* InstagramCloneFirebase.app */;
@@ -257,6 +260,7 @@
 			mainGroup = 5FCF5A422A03802E00F4E12E;
 			packageReferences = (
 				5FCF5A802A038CBD00F4E12E /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
+				5FCF5A942A04EF7F00F4E12E /* XCRemoteSwiftPackageReference "SDWebImage" */,
 			);
 			productRefGroup = 5FCF5A4C2A03802E00F4E12E /* Products */;
 			projectDirPath = "";
@@ -661,6 +665,14 @@
 				minimumVersion = 10.0.0;
 			};
 		};
+		5FCF5A942A04EF7F00F4E12E /* XCRemoteSwiftPackageReference "SDWebImage" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SDWebImage/SDWebImage";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.0.0;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -683,6 +695,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 5FCF5A802A038CBD00F4E12E /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
 			productName = FirebaseStorage;
+		};
+		5FCF5A952A04EF7F00F4E12E /* SDWebImage */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 5FCF5A942A04EF7F00F4E12E /* XCRemoteSwiftPackageReference "SDWebImage" */;
+			productName = SDWebImage;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

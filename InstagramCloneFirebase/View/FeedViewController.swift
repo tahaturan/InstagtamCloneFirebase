@@ -7,6 +7,7 @@
 
 import UIKit
 import Firebase
+import SDWebImage
 
 class FeedViewController: UIViewController {
 
@@ -16,6 +17,7 @@ class FeedViewController: UIViewController {
     var userCommentArray = [String]()
     var likeArray = [Int]()
     var userImageArray = [String]()
+    var documentIdArray = [String]()
 
 
     
@@ -45,8 +47,8 @@ extension FeedViewController: UITableViewDelegate , UITableViewDataSource{
         cell.commentLabel.text = userCommentArray[indexPath.row]
         cell.userNameLabel.text = userEmailArray[indexPath.row]
         cell.likeLabel.text = String(likeArray[indexPath.row])
-        cell.userImageView.image = UIImage(named: "select.png")
-        
+        cell.userImageView.sd_setImage(with: URL(string: self.userImageArray[indexPath.row]))
+        cell.documentIDLabel.text = documentIdArray[indexPath.row]
         return cell
     }
     
@@ -61,14 +63,24 @@ extension FeedViewController{
         let fireStoreDatabase = Firestore.firestore()
       
         
-        fireStoreDatabase.collection("Posts").addSnapshotListener { snapshot, error in
+        fireStoreDatabase.collection("Posts").order(by: "date", descending: true)
+            .addSnapshotListener { snapshot, error in
             
             if error != nil{
                 print(error?.localizedDescription ?? "error")
             }else{
                 if snapshot?.isEmpty != true && snapshot != nil{
+                    
+                    self.userEmailArray.removeAll()
+                    self.userImageArray.removeAll()
+                    self.userCommentArray.removeAll()
+                    self.likeArray.removeAll()
+                    self.documentIdArray.removeAll()
+                    
                     for document in  snapshot!.documents {
-                        let documentId = document.documentID
+                        
+                        let documentID = document.documentID
+                        self.documentIdArray.append(documentID)
                        
                         
                         if let userName = document.get("postedBy") as? String{
